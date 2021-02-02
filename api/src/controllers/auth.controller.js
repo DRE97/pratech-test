@@ -36,7 +36,7 @@ export const signup = async (req, res) => {
 
 export const signin = async (req, res) => {
     const {email, password} = req.body;
-
+    
     const userFound = await User.findOne({email: email});
 
     if(!userFound) {
@@ -44,7 +44,7 @@ export const signin = async (req, res) => {
     }
 
     const verifyPassword = await User.comparePassword(password, userFound.password);
-
+console.log(verifyPassword);
     if(!verifyPassword) {
         return res.json({message: 'Invalid password'})
     }

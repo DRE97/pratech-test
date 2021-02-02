@@ -8,15 +8,16 @@ Node js,
  Mongodb
 
 Guia de configuracion:
-1. Clonar o descargar el archivo ZIP desde GiTHub y abrir en editor
-2. Abrir una nueva terminal en el archivo
-3. Ejecutar el comando cd ./api
-4. Ejecutar el comando npm install
-5. Ejecutar el comando npm run dev
-6. Abrir una nueva terminal en el archivo
-7. Ejecutar el comando cd ./front
-8. Ejecutar el comando npm install
-9. Ejecutar el comando npm start
+1. Ejecutar mongodb en una nueva terminal
+2. Clonar o descargar el archivo ZIP desde GiTHub y abrir en editor
+3. Abrir una nueva terminal en el archivo
+4. Ejecutar el comando cd ./api
+5. Ejecutar el comando npm install
+6. Ejecutar el comando npm run dev
+7. Abrir una nueva terminal en el archivo
+8. Ejecutar el comando cd ./front
+9. Ejecutar el comando npm install
+10. Ejecutar el comando npm start
 
 Nota:
 

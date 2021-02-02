@@ -12,7 +12,7 @@ export const createUser = async () => {
         const userData = {
             username: "admin",
             email: "admin@hotmail.com",
-            password: "admin",
+            password: await User.encryptPassword("admin"),
             birth: "2021-02-02",
             gender: "male",
             city: "medellin",

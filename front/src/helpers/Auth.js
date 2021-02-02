@@ -5,6 +5,7 @@ class Auth {
 
     login = async (email, password) => {
 
+        console.log(email, password);
         const response = await axios.post('http://localhost:4000/api/signin', {
             email: email,
             password: password
