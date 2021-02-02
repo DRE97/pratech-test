@@ -17,10 +17,13 @@ export default function Signin(props) {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const {token, userId} = await loginUser(email, password)
-        sessionStorage.setItem('token', JSON.stringify(token));
-        sessionStorage.setItem('userId', JSON.stringify(userId));
-        props.setToken(token);
+        const data = await loginUser(email, password);
+        if(data.token) {
+            const {token, userId} = data;
+            sessionStorage.setItem('token', JSON.stringify(token));
+            sessionStorage.setItem('userId', JSON.stringify(userId));
+            props.setToken(token);
+        }
     }
 
     if(props.token) {

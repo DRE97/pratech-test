@@ -7,7 +7,7 @@ export const checkDuplicatedUser = async (req, res, next) => {
     const userFound = await User.findOne({username});
 
     if(userFound) {
-        return res.status(400).json({
+        return res.status(200).json({
             message: 'User already exists'
         })
     }
@@ -15,7 +15,7 @@ export const checkDuplicatedUser = async (req, res, next) => {
     const emailFound = await User.findOne({email});
 
     if(emailFound) {
-        return res.status(400).json({
+        return res.status(200).json({
             message: 'Email already exists'
         });
     }

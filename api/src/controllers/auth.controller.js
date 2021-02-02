@@ -14,6 +14,7 @@ export const signup = async (req, res) => {
         checked
     } = req.body;
     
+    
     const newUser = new User({
         username,
         email,
@@ -29,6 +30,7 @@ export const signup = async (req, res) => {
     const token = jwt.sign({id: savedUser._id}, config.SECRET, {expiresIn: 7200});
 
     res.status(200).json({token: token, savedUser});
+    
 
 }
 
@@ -50,7 +52,7 @@ export const signin = async (req, res) => {
     const token = jwt.sign({id: userFound._id}, config.SECRET, {
         expiresIn: 7200
     });
-    console.log(req.body);
+    //console.log(req.body);
     res.status(200).json({token: token, username: userFound.username, userId: userFound._id});
 }
 

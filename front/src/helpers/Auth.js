@@ -2,10 +2,6 @@ import axios from 'axios';
 
 
 class Auth {
-    constructor() {
-        this.authenticated = false;
-        this.userLogged = {}
-    }
 
     login = async (email, password) => {
 
@@ -14,10 +10,19 @@ class Auth {
             password: password
         });
 
+        //console.log(response.data);
+
         const token = response.data.token;
+
+        if(!token) {
+            alert(response.data.message);
+            return(response.data);
+        }
+
         const userId = response.data.userId;
         
         return {token, userId};
+
     }
 
     logout = async () => {
@@ -47,12 +52,14 @@ class Auth {
             city,
             checked
         });
+
+        //console.log(response);
         
         const token = response.data.token;
 
         if(!token) {
             alert(response.data.message);
-            return(false);
+            return(response.data);
         }
 
         const userId = response.data.savedUser._id;
@@ -60,15 +67,6 @@ class Auth {
         return {token, userId};
         
     }
-
-    isAuthenticated = () => {
-        return this.authenticated;
-    }
-    
-    userLoggedIn = async () => {
-        return JSON.parse(localStorage.getItem('user'));
-    }
-
 
 }
 

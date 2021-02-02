@@ -1,11 +1,11 @@
 # pratech-test
 Prueba técnica Pratech MERN stack
-Realizada por: Daniel Ramirez Echeverri
+. Realizada por: Daniel Ramirez Echeverri
 
-Modulos necesarios para la ejecucion
-Node js
-Git
-Mongodb
+Modulos necesarios para la ejecucion:
+Node js,
+ Git,
+ Mongodb
 
 Guia de configuracion:
 1. Clonar o descargar el archivo ZIP desde GiTHub y abrir en editor
@@ -19,4 +19,5 @@ Guia de configuracion:
 9. Ejecutar el comando npm start
 
 Nota:
+
 Al ejecutar ambos archivos, puede ingresar por medio del login con el email: admin@hotmail.com y password: admin, o tambien puede crear una cuenta nueva en el apartado de Signup

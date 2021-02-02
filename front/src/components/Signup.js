@@ -3,8 +3,8 @@ import Auth from '../helpers/Auth';
 import {Route, Redirect} from 'react-router-dom';
 import NavLoggedOut from './navbarComponents/NavLoggedOut';
 
-async function signUp(username, email, password) {
-    const token = await Auth.signup(username, email, password);
+async function signUp(userData) {
+    const token = await Auth.signup(userData);
     return token
 }
 
@@ -28,11 +28,14 @@ export default function Signin(props) {
             city,
             checked
         }
-        
-        const {token, userId} = await signUp(userData)
-        sessionStorage.setItem('token', JSON.stringify(token));
-        sessionStorage.setItem('userId', JSON.stringify(userId));
-        props.setToken(token);
+
+        const data = await signUp(userData)
+        if(data.token) {
+            const {token, userId} = data;
+            sessionStorage.setItem('token', JSON.stringify(token));
+            sessionStorage.setItem('userId', JSON.stringify(userId));
+            props.setToken(token);
+        }
         
     }
 
